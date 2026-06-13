@@ -9,7 +9,7 @@ services:
   app:
     # Imagen propia pineada por digest (linux/amd64). Publícala en GHCR antes de
     # instalar (ver README del repo BitStatus -> "Construir y publicar la imagen").
-    image: ghcr.io/voidhashh/bitstatus:1.0.0@sha256:4114b6e1ce52e9e20ecd6a19a4b75a6b91196479b240325f20f930b3aaefbcc7
+    image: ghcr.io/voidhashh/bitstatus:1.0.0@sha256:807e4f930c7ee70b2e60324556f2f13fc64ec6289d2014a1881e65ce66fd42a7
     restart: on-failure
     stop_grace_period: 1m
     environment:
