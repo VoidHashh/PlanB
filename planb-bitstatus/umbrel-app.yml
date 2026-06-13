@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: planb-bitstatus
+category: bitcoin
+name: BitStatus
+version: "1.0.0"
+tagline: Monitoriza tus saldos Bitcoin de forma privada desde tu propio nodo
+icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-bitstatus/icon.png
+description: >-
+  Monitoriza los saldos de tus wallets Bitcoin de forma privada, sin que tu
+  xpub salga nunca de tu nodo.
+
+
+  BitStatus es un rastreador watch-only para claves extendidas XPUB, YPUB y ZPUB.
+  Deriva las direcciones localmente y consulta los saldos contra tu propio Electrs,
+  sin depender de APIs de terceros.
+
+
+  El frontend no carga scripts de CDN y el precio fiat (EUR/USD) se obtiene de tu
+  mempool local de Umbrel, no de Internet. Tus wallets, tu nodo, tu privacidad.
+
+
+  Fork de bitBalance (egzola), reescrito para ser autocontenido y sin llamadas
+  externas.
+developer: VoidHashh
+website: https://github.com/VoidHashh/BitStatus
+dependencies:
+  - electrs
+  - mempool
+repo: https://github.com/VoidHashh/BitStatus
+support: https://github.com/VoidHashh/BitStatus/issues
+port: 3710
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: VoidHashh
+submission: https://github.com/VoidHashh/BitStatus
