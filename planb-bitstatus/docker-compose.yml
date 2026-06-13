@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: planb-bitstatus_app_1
+      APP_PORT: 3710
+
+  app:
+    # Imagen propia pineada por digest (linux/amd64). Publícala en GHCR antes de
+    # instalar (ver README del repo BitStatus -> "Construir y publicar la imagen").
+    image: ghcr.io/voidhashh/bitstatus:1.0.0@sha256:35630ac638c934342a02418fbcef9fa7f603ac3ae8387b4b70eed1dc0bcf3e95
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      PORT: 3710
+      ELECTRUM_HOST: $APP_ELECTRS_NODE_IP
+      ELECTRUM_PORT: $APP_ELECTRS_NODE_PORT
+      # Precio fiat desde la mempool local de Umbrel por su ruta interna (no Internet,
+      # no expone IP de LAN). Requiere 'mempool' en dependencies (umbrel-app.yml).
+      PRICE_API_URL: http://$APP_MEMPOOL_IP:$APP_MEMPOOL_PORT/api/v1/prices
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
