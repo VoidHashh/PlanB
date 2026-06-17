@@ -2,7 +2,7 @@ manifestVersion: 1
 id: planb-panel
 category: finance
 name: PlanB
-version: "1.6.0"
+version: "1.7.0"
 tagline: Panel de Bitcoin, inversión y presupuesto del hogar
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
@@ -14,7 +14,8 @@ description: >-
   guardan en el propio servidor, con copias automáticas.
 developer: VoidHashh
 website: https://github.com/VoidHashh/PlanB
-dependencies: []
+dependencies:
+  - electrs
 repo: https://github.com/VoidHashh/PlanB
 support: https://github.com/VoidHashh/PlanB/issues
 port: 8787
