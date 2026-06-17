@@ -10,5 +10,11 @@ services:
     image: ghcr.io/voidhashh/planb-app:latest
     restart: on-failure
     stop_grace_period: 1m
+    environment:
+      # Cotizaciones de la sección Inversión: el propio servidor refresca
+      # data/quotes.json (Yahoo Finance, sin API key). Sin contenedores extra.
+      QUOTES_FETCH: "1"
+      FETCH_INTERVAL: "90"   # minutos (1–2 h)
+      FX_FALLBACK: "1.159"
     volumes:
       - ${APP_DATA_DIR}/data:/app/data
