@@ -2,8 +2,8 @@ manifestVersion: 1
 id: planb-panel
 category: finance
 name: PlanB
-version: "1.5.1"
-tagline: Panel de cripto, inversión y presupuesto del hogar
+version: "1.5.2"
+tagline: Panel de Bitcoin, inversión y presupuesto del hogar
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
   Tu panel personal en local: compras y ventas de BTC, carteras consolidadas,
