@@ -2,15 +2,16 @@ manifestVersion: 1
 id: planb-panel
 category: finance
 name: PlanB
-version: "1.4.2"
-tagline: Panel de cripto y presupuesto del hogar
+version: "1.5.0"
+tagline: Panel de cripto, inversión y presupuesto del hogar
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
   Tu panel personal en local: compras y ventas de BTC, carteras consolidadas,
   préstamos con colateral (LTV, liquidación, ajuste de colateral) y gráficos,
-  más el presupuesto de casa a partir de extractos bancarios (ING, Santander,
-  PayPal). Todos los datos se guardan en el propio servidor, con copias
-  automáticas.
+  una sección de Inversión (fondos, ETCs y acciones por bloques con rebalanceo
+  por aportación y cotizaciones automáticas), más el presupuesto de casa a
+  partir de extractos bancarios (ING, Santander, PayPal). Todos los datos se
+  guardan en el propio servidor, con copias automáticas.
 developer: VoidHashh
 website: https://github.com/VoidHashh/PlanB
 dependencies: []
