@@ -16,5 +16,10 @@ services:
       QUOTES_FETCH: "1"
       FETCH_INTERVAL: "90"   # minutos (1–2 h)
       FX_FALLBACK: "1.159"
+      # Sección Saldos (watch-only): Electrs local de tu nodo. Umbrel inyecta estas
+      # variables al declarar 'electrs' en dependencies (umbrel-app.yml). El xpub se
+      # deriva en local y solo se consulta a tu Electrs por TCP; nunca sale del nodo.
+      ELECTRUM_HOST: $APP_ELECTRS_NODE_IP
+      ELECTRUM_PORT: $APP_ELECTRS_NODE_PORT
     volumes:
       - ${APP_DATA_DIR}/data:/app/data
