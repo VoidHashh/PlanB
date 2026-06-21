@@ -2,7 +2,7 @@ manifestVersion: 1
 id: planb-panel
 category: finance
 name: PlanB
-version: "1.16.38"
+version: "1.16.39"
 tagline: Panel de Bitcoin, inversión y presupuesto del hogar
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
