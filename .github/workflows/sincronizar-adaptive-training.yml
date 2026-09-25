@@ -1,0 +1,82 @@
+# Trae a la tienda los dos YAML de `VoidHashh/adaptive-training`.
+#
+# POR QUE ESTE TALLER VIVE AQUI Y NO ALLI (25/09/2026)
+# ----------------------------------------------------
+# Los dos ficheros de `planb-adaptive-training/` son una COPIA: el original vive
+# en el repositorio del codigo, donde `tests/test_despliegue.py` los ata al
+# Dockerfile y a `pyproject.toml`. Umbrel, en cambio, lee de aqui. Mientras la
+# copia se hacia a mano, olvidarla no daba ningun error: la interfaz de Umbrel
+# simplemente no ofrecia la actualizacion, y todo parecia en orden.
+#
+# Lo natural seria que el taller de alla empujara aqui al publicar. No se ha
+# hecho asi, y el motivo es que su `GITHUB_TOKEN` solo puede escribir en SU
+# repositorio: haria falta una credencial con permiso sobre este, guardada como
+# secreto. Poniendo el taller de este lado, el `GITHUB_TOKEN` de esta ejecucion
+# ya tiene el permiso que hace falta y NO HAY NINGUNA CREDENCIAL QUE CREAR,
+# GUARDAR NI ROTAR. Los ficheros de origen son publicos, asi que leerlos no
+# necesita nada.
+#
+# El precio es la latencia: hasta que toque el reloj. Para una aplicacion de
+# casa que se actualiza cuando se actualiza, es un precio que no se nota.
+name: Sincronizar adaptive-training
+
+on:
+  schedule:
+    # Cada diez minutos. GitHub no garantiza la puntualidad de `schedule` y
+    # suele retrasarlo; da igual, nadie esta esperando delante.
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Si una ejecucion se retrasa y la siguiente entra encima, dos commits sobre
+  # los mismos ficheros se pisan y el segundo `push` falla.
+  group: sincronizar-adaptive-training
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Traer los dos YAML del repositorio del codigo
+        run: |
+          set -euo pipefail
+          ORIGEN=https://raw.githubusercontent.com/VoidHashh/adaptive-training/main/umbrel
+          mkdir -p planb-adaptive-training
+
+          # `-f` para que un 404 sea un error y no un fichero con una pagina de
+          # GitHub dentro. Sin eso, el dia que alguien renombre `umbrel/` esto
+          # commitearia HTML en el sitio del manifiesto y la aplicacion
+          # desapareceria de la tienda sin que nadie viera un fallo.
+          curl -fsSL "$ORIGEN/umbrel-app.yml"     -o /tmp/umbrel-app.yml
+          curl -fsSL "$ORIGEN/docker-compose.yml" -o /tmp/docker-compose.yml
+
+          # Y aun con un 200, se comprueba que es lo que se cree que es. Un
+          # fichero servido por error -una redireccion, un repositorio vacio-
+          # llega con codigo 200 y contenido que no es un manifiesto.
+          grep -q "^id: planb-adaptive-training$" /tmp/umbrel-app.yml
+          grep -q "^version:" /tmp/umbrel-app.yml
+          grep -q "APP_HOST: planb-adaptive-training_server_1" /tmp/docker-compose.yml
+          grep -q "image: ghcr.io/voidhashh/adaptive-training:" /tmp/docker-compose.yml
+
+          mv /tmp/umbrel-app.yml     planb-adaptive-training/umbrel-app.yml
+          mv /tmp/docker-compose.yml planb-adaptive-training/docker-compose.yml
+
+      - name: Publicar si ha cambiado algo
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- planb-adaptive-training; then
+            echo "la tienda ya estaba al dia"
+            exit 0
+          fi
+          V=$(grep -m1 "^version:" planb-adaptive-training/umbrel-app.yml | tr -d '"' | awk '{print $2}')
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add planb-adaptive-training
+          git commit -m "adaptive-training $V, traido del repositorio del codigo"
+          git push
+          echo "publicada la version $V"
