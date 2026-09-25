@@ -6,15 +6,16 @@
      1. CUADRAR el lienzo. Venia con viewBox 49x46 y las tarjetas de Umbrel son
         cuadradas: un icono que no lo es sale estirado o con bandas segun lo que
         haga el navegador, y eso no se ve revisando el fichero, se ve en el movil.
-     2. FONDO BLANCO a sangre. El dibujo lleva grises claros (#ACB5BC) que sobre
-        el fondo oscuro de la tarjeta de Umbrel casi desaparecian. Va como
-        rectangulo a sangre y no redondeado: el redondeo lo pone Umbrel al
-        recortar la tarjeta, y redondearlo aqui tambien dejaria un borde blanco
-        asomando por fuera de su mascara.
+     2. EL FONDO, #141414, elegido por el usuario para que la tarjeta se funda
+        con el fondo oscuro de Umbrel. Va a sangre y no redondeado: el redondeo
+        lo pone Umbrel al recortar la tarjeta, y redondearlo aqui dejaria un
+        borde asomando por fuera de su mascara.
 
-     El margen es mayor que sin fondo (78% contra 90%): con un fondo detras, el
-     dibujo pegado al borde aprieta. -->
-<rect width="1024" height="1024" fill="#FFFFFF"/>
+     OJO CON EL CONTRASTE: el dibujo trae dos trazos en #232021 -casi el mismo
+     tono que este fondo- que sobre el se pierden. Es visible y esta aceptado;
+     si algun dia se ve mal en un movil, el sitio donde se cambia es esta linea
+     y no el dibujo. -->
+<rect width="1024" height="1024" fill="#141414"/>
 <g transform="translate(112.640 137.091) scale(16.300408)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4319 25.7327C20.7068 26.3462 20.2049 26.9597 19.8145 27.6847C21.2646 28.5771 20.3164 35.4373 24.611 35.6046C28.0132 35.772 27.0651 28.8002 28.9614 27.6847C28.6825 26.9597 28.069 26.3462 27.3439 25.7327C25.5034 26.0115 23.4955 26.0115 21.4877 25.7327H21.4319Z" fill="#FED15A"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M38.8334 15.4707C39.3912 15.2476 40.0605 15.4707 40.2836 16.0285C40.5067 16.5862 40.2836 17.2555 39.7258 17.4786L34.8735 19.5422C34.3158 19.7653 33.6465 19.5422 33.4234 18.9845C33.2003 18.4268 33.4234 17.7575 33.9811 17.5344L38.8334 15.4707Z" fill="#ACB5BC"/>
