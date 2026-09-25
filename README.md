@@ -16,3 +16,4 @@ https://github.com/VoidHashh/PlanB
 |-----|-------------|
 | **PlanB** (`planb-panel`) | Panel de cripto y presupuesto del hogar. |
 | **BitStatus** (`planb-bitstatus`) | Monitor privado de saldos Bitcoin (XPUB/YPUB/ZPUB) contra tu Electrs local. Código: https://github.com/VoidHashh/BitStatus |
+| **Entrenamiento adaptativo** (`planb-adaptive-training`) | Decide la sesión de fuerza de cada día con Garmin, Hevy y un check-in de siete deslizadores. Código: https://github.com/VoidHashh/adaptive-training |
