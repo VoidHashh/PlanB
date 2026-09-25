@@ -1,13 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <!-- Icono de la aplicacion para la tienda de Umbrel.
      El dibujo es el original tal cual: los 17 trazos y los colores no se han
-     tocado. Lo unico que se ha hecho aqui es CUADRAR el lienzo. Venia con
-     viewBox 49x46, y una tarjeta de Umbrel es cuadrada: un icono que no lo es
-     sale estirado o con bandas segun lo que haga el navegador, y eso no se ve
-     revisando el fichero, se ve en el movil.
-     Sin fondo a proposito: la tarjeta de Umbrel pone el suyo, y el dibujo se
-     lee igual en claro y en oscuro -comprobado rasterizando los dos-. -->
-<g transform="translate(51.200 79.412) scale(18.808163)">
+     tocado. Aqui se hacen dos cosas y solo dos:
+
+     1. CUADRAR el lienzo. Venia con viewBox 49x46 y las tarjetas de Umbrel son
+        cuadradas: un icono que no lo es sale estirado o con bandas segun lo que
+        haga el navegador, y eso no se ve revisando el fichero, se ve en el movil.
+     2. FONDO BLANCO a sangre. El dibujo lleva grises claros (#ACB5BC) que sobre
+        el fondo oscuro de la tarjeta de Umbrel casi desaparecian. Va como
+        rectangulo a sangre y no redondeado: el redondeo lo pone Umbrel al
+        recortar la tarjeta, y redondearlo aqui tambien dejaria un borde blanco
+        asomando por fuera de su mascara.
+
+     El margen es mayor que sin fondo (78% contra 90%): con un fondo detras, el
+     dibujo pegado al borde aprieta. -->
+<rect width="1024" height="1024" fill="#FFFFFF"/>
+<g transform="translate(112.640 137.091) scale(16.300408)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4319 25.7327C20.7068 26.3462 20.2049 26.9597 19.8145 27.6847C21.2646 28.5771 20.3164 35.4373 24.611 35.6046C28.0132 35.772 27.0651 28.8002 28.9614 27.6847C28.6825 26.9597 28.069 26.3462 27.3439 25.7327C25.5034 26.0115 23.4955 26.0115 21.4877 25.7327H21.4319Z" fill="#FED15A"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M38.8334 15.4707C39.3912 15.2476 40.0605 15.4707 40.2836 16.0285C40.5067 16.5862 40.2836 17.2555 39.7258 17.4786L34.8735 19.5422C34.3158 19.7653 33.6465 19.5422 33.4234 18.9845C33.2003 18.4268 33.4234 17.7575 33.9811 17.5344L38.8334 15.4707Z" fill="#ACB5BC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M24.8899 3.64634C24.8341 3.59056 24.7783 3.53479 24.7225 3.42324C24.6668 3.47902 24.611 3.53479 24.5552 3.64634L12.2292 17.3109C11.8388 17.7571 11.1137 17.8129 10.6675 17.3667C10.2214 16.9763 10.1656 16.2512 10.6118 15.805L22.9378 2.14045C23.3282 1.69425 24.0533 1.63848 24.4995 2.08467C24.611 2.14045 24.6668 2.25199 24.7225 2.36354C24.7783 2.25199 24.8341 2.14045 24.9456 2.08467C25.3918 1.69425 26.1169 1.69425 26.5073 2.14045L38.8333 15.805C39.2237 16.2512 39.2237 16.9763 38.7775 17.3667C38.3314 17.7571 37.6063 17.7571 37.2159 17.3109L24.8899 3.64634Z" fill="#ACB5BC"/>
