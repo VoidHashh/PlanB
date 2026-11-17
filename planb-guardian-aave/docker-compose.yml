@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: planb-guardian-aave_server_1
+      APP_PORT: 8790
+
+  server:
+    image: ghcr.io/voidhashh/guardian-aave:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      PORT: "8790"
+      HOST: "0.0.0.0"
+    # Carpeta de datos: config.json (público) y telegram.secret.json (privado, lo crea el dueño por SSH).
+    # El token de Telegram NUNCA va aquí: este repositorio de la tienda es público.
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
