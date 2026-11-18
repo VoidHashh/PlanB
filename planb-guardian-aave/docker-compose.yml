@@ -7,7 +7,7 @@ services:
       APP_PORT: 8790
 
   server:
-    image: ghcr.io/voidhashh/guardian-aave:latest
+    image: ghcr.io/voidhashh/guardian-aave:0.7.0@sha256:64b1605f2ae3d6310876c78cc40d1a3063a3cdffedc8fbc7a6316110d71b316e
     restart: on-failure
     stop_grace_period: 1m
     environment:
