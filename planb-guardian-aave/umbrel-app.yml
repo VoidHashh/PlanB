@@ -2,7 +2,7 @@ manifestVersion: 1
 id: planb-guardian-aave
 category: finance
 name: Guardián Aave
-version: "0.6.2"
+version: "0.6.3"
 tagline: Vigila tu préstamo de Aave V3 y lo protege con una cartera de reserva
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
