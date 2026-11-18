@@ -2,7 +2,7 @@ manifestVersion: 1
 id: planb-guardian-aave
 category: finance
 name: Guardián Aave
-version: "0.3.0"
+version: "0.4.0"
 tagline: Vigila tu préstamo de Aave V3 y lo protege con una cartera de reserva
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
@@ -10,9 +10,10 @@ description: >-
   LTV, deuda y precio de liquidación, leídos de dos servidores que tienen que
   coincidir. Muestra la cartera de reserva y un panel de escalas con cuánto
   WBTC (y stable como último recurso) haría falta para cada caída de BTC.
-  Fase 3: desarmado solo simula y avisa por Telegram; armado, firma con la
-  clave de la cartera de reserva (fichero privado) y aporta WBTC o paga deuda
-  en nombre de la principal. En esta fase solo se puede armar en Sepolia.
+  Fase 4: desarmado solo simula y avisa por Telegram; armado (en Ethereum o en
+  Sepolia), firma con la clave de la cartera de reserva (fichero privado) y
+  aporta WBTC o paga deuda en nombre de la principal. Si Aave no acepta el
+  WBTC, paga con la stable en su lugar.
 developer: VoidHashh
 website: https://github.com/VoidHashh/PlanB
 dependencies: []
