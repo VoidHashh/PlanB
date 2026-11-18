@@ -2,7 +2,7 @@ manifestVersion: 1
 id: planb-guardian-aave
 category: finance
 name: Guardián Aave
-version: "0.5.3"
+version: "0.6.0"
 tagline: Vigila tu préstamo de Aave V3 y lo protege con una cartera de reserva
 icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
 description: >-
@@ -15,7 +15,8 @@ description: >-
   aporta WBTC o paga deuda en nombre de la principal. Si Aave no acepta el
   WBTC, paga con la stable en su lugar. Calcula el ETH que necesita la reserva
   para el gas en una caída y avisa si no alcanza. Manda un resumen diario por
-  Telegram como señal de que sigue vivo.
+  Telegram como señal de que sigue vivo. Armar pide una contraseña propia
+  (fichero privado) y desarmar lo detiene al momento.
 developer: VoidHashh
 website: https://github.com/VoidHashh/PlanB
 dependencies: []
