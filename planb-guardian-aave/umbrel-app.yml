@@ -2,9 +2,9 @@ manifestVersion: 1
 id: planb-guardian-aave
 category: finance
 name: Guardián Aave
-version: "0.10.1"
+version: "0.10.2"
 tagline: Vigila tu préstamo de Aave V3 y lo protege con una cartera de reserva
-icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-panel/icon.png
+icon: https://raw.githubusercontent.com/VoidHashh/PlanB/main/planb-guardian-aave/icon.png
 description: >-
   Vigila un préstamo de Aave V3 (Ethereum) con colateral WBTC: factor de salud,
   LTV, deuda y precio de liquidación, leídos de dos servidores que tienen que
